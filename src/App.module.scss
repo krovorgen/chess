@@ -1,0 +1,33 @@
+@import "./src/scss/helpers/variables";
+@import "./src/scss/helpers/mixins";
+
+.root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board {
+  width: calc(64px * 8);
+  height : calc(64px * 8);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.black {
+  background-color: deepskyblue;
+}
+
+.white {
+  background-color: #e1c897;
+}
