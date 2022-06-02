@@ -13,11 +13,11 @@ export class Cell {
     public figure: Figure | null,
   ) {}
 
-  canMove(target: Cell): boolean {
-    return true;
-  }
-
-  moveFigure(target: Cell): boolean {
-    return true;
+  moveFigure(target: Cell) {
+    if (this.figure?.canMove(target)) {
+      this.figure?.moveFigure(target);
+      target.figure = this.figure;
+      this.figure = null;
+    }
   }
 }

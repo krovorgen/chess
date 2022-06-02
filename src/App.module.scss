@@ -2,32 +2,48 @@
 @import "./src/scss/helpers/mixins";
 
 .root {
-  width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .board {
-  width: calc(64px * 8);
-  height : calc(64px * 8);
   display: flex;
   flex-wrap: wrap;
+  width: calc(64px * 8);
+  height: calc(64px * 8);
 }
 
 .cell {
-  width: 64px;
-  height: 64px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 64px;
+  height: 64px;
 }
 
 .black {
-  background-color: deepskyblue;
+  background-color: #00bfff;
 }
 
 .white {
   background-color: #e1c897;
+}
+
+.selected {
+  background-color: #a52a2a;
+}
+
+.available {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: rgb(0, 127, 0);
+}
+
+.attack {
+  background-color: #00ff76;
 }
