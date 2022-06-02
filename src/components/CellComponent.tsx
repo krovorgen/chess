@@ -10,5 +10,11 @@ type CellComponentProps = {
 };
 
 export const CellComponent: FC<CellComponentProps> = memo(({ cell }) => {
-  return <div className={cn(styles.cell, styles[cell.color])}></div>;
+  return (
+    <div className={cn(styles.cell, styles[cell.color])}>
+      {cell.figure?.logo && (
+        <img src={cell.figure?.logo} alt={cell.figure.name} width={48} height={48} />
+      )}
+    </div>
+  );
 });
