@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
-import styles from './App.module.scss';
 import { BoardComponent } from './components/BoardComponent';
 import { Board } from './models/Board';
+
+import styles from './App.module.scss';
 
 export const App = () => {
   const [board, setBoard] = useState(new Board());
 
-  useEffect(() => {
-    restart();
-  }, []);
-
-  const restart = () => {
+  const restart = useCallback(() => {
     const newBoard = new Board();
     newBoard.initCells();
     setBoard(newBoard);
-  };
+  }, []);
+
+  useEffect(() => {
+    restart();
+  }, [restart]);
 
   return (
     <div className={styles.root}>
