@@ -13,8 +13,15 @@ export class Cell {
     public figure: Figure | null,
   ) {}
 
-  isEmpty() {
+  isEmpty(): boolean {
     return this.figure === null;
+  }
+
+  isEnemy(target: Cell): boolean {
+    if (target.figure) {
+      return this.figure?.color !== target.figure.color;
+    }
+    return false;
   }
 
   isEmptyVertical(target: Cell): boolean {
